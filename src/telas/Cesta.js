@@ -1,23 +1,27 @@
-import React from "react";
-import { StyleSheet, Image, Dimensions, Text, View } from "react-native";
+import React from 'react';
+import { StyleSheet, Image, Dimensions, Text, View } from 'react-native';
+
+import Texto from '../componentes/Texto';
+
 import topo from '../../assets/topo.png';
-import logo from '../../assets/logo.png'
+import logo from '../../assets/logo.png';
 
 const width = Dimensions.get('screen').width;
+
 export default function Cesta() {
     return <>
         <Image source={topo} style={estilos.topo} />
-        <Text style={estilos.titulo}>Detalhe da Cesta</Text>
+        <Texto style={estilos.titulo}>Detalhe da Cesta</Texto>
 
         <View style={estilos.cesta}>
-            <Text style={estilos.nome}>Cesta de Verduras</Text>
+            <Texto style={estilos.nome}>Cesta de Verduras</Texto>
             <View style={estilos.fazenda}>
-                <Image source={logo} style={estilos.imagemFazenda}/>
-                <Text style={estilos.nomeFazenda}>Jenny Jack</Text>
+                <Image source={logo} style={estilos.imagemFazenda} />
+                <Texto style={estilos.nomeFazenda}>Jenny Jack</Texto>
             </View>
-            
-            <Text style={estilos.descricao}>Uma cesta com produtos selecionados cuidadosamente da fazendo direto para a sua cozinha</Text>
-            <Text style={estilos.prreco}>R$ 40,00</Text>
+
+            <Texto style={estilos.descricao}>Uma cesta com produtos selecionados cuidadosamente da fazendo direto para a sua cozinha</Texto>
+            <Texto style={estilos.prreco}>R$ 40,00</Texto>
         </View>
 
     </>
@@ -39,36 +43,35 @@ const estilos = StyleSheet.create({
         fontWeight: "bold",
         padding: 16
     },
-    cesta:{
+    cesta: {
         paddingVertical: 8,
         paddingHorizontal: 16,
     },
-    nome:{
-       fontSize: 26,
-       lineHeight: 42,
-       color: "#464646",
-       fontFamily: "MontserratBold",
+    nome: {
+        fontSize: 26,
+        lineHeight: 42,
+        color: "#464646",
+        fontWeight: "bold"
     },
-    fazenda:{
+    fazenda: {
         flexDirection: "row",
-        paddingVertical:12
+        paddingVertical: 12
     },
-    imagemFazenda:{
-        width:32,
-        height:32
+    imagemFazenda: {
+        width: 32,
+        height: 32
     },
-    nomeFazenda:{
+    nomeFazenda: {
         fontSize: 16,
-        lineHeight:26,
+        lineHeight: 26,
         marginLeft: 12,
-        fontFamily: "MontserratRegular"
     },
-    descricao:{
-        color:"#a3a3a3",
+    descricao: {
+        color: "#a3a3a3",
         fontSize: 16,
         lineHeight: 26
     },
-    prreco:{
+    prreco: {
         color: "#2a9f85",
         fontWeight: "bold",
         fontSize: 26,
